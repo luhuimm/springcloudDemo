@@ -1,0 +1,18 @@
+
+spring:
+  application:
+    name: FeignHystrix
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+
+#userProvider:
+#  ribbon:
+#   NFLoadBalancerRuleClassName: com.hui.MyRule
+feign:
+  hystrix:
+    enabled: true
+server:
+  port: 8999

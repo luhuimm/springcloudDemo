@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 6
+
+  client:
+    service-url:
+      defaultZone: http://eureka01:8881/eureka/,http://eureka02:8882/eureka/,http://eureka03:8883/eureka/
+spring:
+  application:
+    name: UserProvider
+management:
+  endpoint:
+    health:
+      show-details: always

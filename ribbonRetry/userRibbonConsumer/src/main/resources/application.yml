@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ribbonConsumer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+
+userProvider:
+  ribbon:
+   NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RetryRule
+
+
+ribbon:
+  OkToRetryOnAllOperations: true # 是否对所有请求都进行重试
+  MaxAutoRetries: 0     #重试次数
+  MaxAutoRetriesNextServer: 2   #重试切换实例次数
+  ConnectTimeout: 250
+  ReadTimeout: 300
+  retryableStatusCodes: 503,500
+

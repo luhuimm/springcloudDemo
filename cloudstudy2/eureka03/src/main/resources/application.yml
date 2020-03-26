@@ -1,0 +1,18 @@
+server:
+  port: 8883
+
+eureka:
+  instance:
+    hostname: eureka03
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 6
+  client:
+    service-url:
+      defaultZone: http://eureka01:8881/eureka/,http://eureka02:8882/eureka/
+    healthcheck:
+      enabled: true
+    register-with-eureka: false
+    fetch-registry: false
+spring:
+  application:
+    name: EurekaCenter

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ribbonConsumer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+
+userProvider:
+  ribbon:
+   NFLoadBalancerRuleClassName: com.hui.MyRule

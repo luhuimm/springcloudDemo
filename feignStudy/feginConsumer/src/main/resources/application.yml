@@ -1,0 +1,20 @@
+server:
+  port: 8912
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+
+spring:
+  application:
+    name: FeignConsumer
+logging:
+  level:
+    com.hui.service.UserService: DEBUG
+feign:
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
